@@ -1,0 +1,109 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.title h1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-variant: small-caps;
+  font-size: 2em;
+}
+
+.card-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1dvh;
+}
+
+.card-container .card h3 {
+  width: 100%;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-variant: small-caps;
+}
+
+.category-section h2 {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.card-container .card {
+  padding: 10px;
+  width: 200px;
+  height: 200px;
+  max-width: 200px;
+  max-height: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.card-container .card:hover {
+  border: 1px solid white;
+}
+
+.card-container .card.available {
+  background: linear-gradient(135deg, darkblue, blue);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-container .card.available::before {
+  position: absolute;
+  content: '';
+  width: 80px;
+  height: 80px;
+  background: darkblue;
+  bottom: 0;
+  right: 0;
+  border-radius: 50px 0 0 50px / 25px 0 0 0;
+}
+
+.card-container .card.soldout {
+  background: gray;
+  opacity: .5;
+}
+
+.available {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  color: #ffffff74;
+  text-align: start;
+}
+
+@media(max-width: 768px) {
+  html {
+    font-size: 68%;
+  }
+
+  .card-container .card {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card-container .card.available::before {
+    width: 35px;
+    height: 35px;
+  }
+
+  .title h1 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-variant: small-caps;
+    font-size: large;
+  }
+}
